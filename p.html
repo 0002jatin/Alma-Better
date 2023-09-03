@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+        $.ajax({
+            url: '<https://dummyjson.com/products>',
+            method: 'GET',
+            data: {userId:'56', test:89},
+            dataType: 'json',
+            success: function(response){
+                alert(JSON.stringify(response))
+                $('#result').text("data loaded");
+            },
+            error: function(xhr, status, error) {
+                //console.error(error);\
+                console.log(xhr)
+            }
+        });
+        });
+    </script>
+</head>
+<body>
+    <div id="result"></div>
+
+</body>
+</html>
